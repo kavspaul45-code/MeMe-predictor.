@@ -18,8 +18,7 @@ jobs:
         with:
           packages: 'platform-tools'
 
-      - name: Install SDK
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      
       - name: Install SDK
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
