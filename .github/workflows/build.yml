@@ -17,6 +17,10 @@ jobs:
       - uses: android-actions/setup-android@v4
         with:
           packages: 'platform-tools'
+          compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
       
       - name: Install SDK
@@ -38,3 +42,8 @@ jobs:
         with:
           name: MeMe-Predictor-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+          tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "21"
+    }
+}
